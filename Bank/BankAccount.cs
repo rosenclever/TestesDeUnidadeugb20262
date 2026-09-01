@@ -32,6 +32,15 @@
         }
         m_balance -= amount;
     }
+
+    public void Credit(decimal amount)
+    {
+        if (amount < 0)
+        {
+            throw new ArgumentOutOfRangeException("valor ", amount, "O valor do depósito deve ser positivo.");
+        }
+        m_balance += amount;
+    }
 }
 
 
